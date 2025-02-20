@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Up Ideas - SheShines</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-image: url('i7.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background: url('farming.g.hack.png')no-repeat center center fixed;
+            background-size: fixed;
+        }
+
+        .header-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+        }
+
+        .top-text {
+            background-color: #f8c5d5;
+            padding: 20px;
+            color: black;
+            font-size: 24px;
+            font-weight: bold;
+            border-bottom: 4px solid pink;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        header {
+            background-color: rgba(255, 255, 255, 0.7);
+            border-bottom: 4px solid pink;
+            padding: 10px 0;
+            animation: slideDown 1s ease-in-out;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        nav h1 {
+            color: black;
+            order: -1;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav ul li a:hover {
+            color: pink;
+        }
+
+        main {
+            margin-top: 40px;
+            padding: 20px;
+            color: #fff;
+        }
+
+        h2 {
+            color: black;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .pick-box {
+            background-color: rgba(248, 197, 213, 0.9);
+            padding: 30px;
+            border-radius: 20px;
+            width: 80%;
+            margin: 0 auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            animation: scaleUp 1.5s ease-in-out;
+        }
+
+        @keyframes scaleUp {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .pick-box h3 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .features {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .feature {
+            background: #f2a2c2;
+            padding: 15px;
+            border-radius: 10px;
+            width: 200px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .feature:hover {
+            transform: scale(1.1);
+        }
+
+        .feature p {
+            font-weight: bold;
+            color: black;
+        }
+
+        /* Images around the container */
+        .side-image {
+            position: absolute;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .image-left {
+            width: 150px;
+            height: auto;
+            top: 50%;
+            left: -160px;
+            transform: translateY(-50%);
+        }
+
+        .image-right {
+            width: 150px;
+            height: auto;
+            top: 50%;
+            right: -160px;
+            transform: translateY(-50%);
+        }
+
+        .image-bottom {
+            width: 200px;
+            height: auto;
+            bottom: -140px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="top-text">Empowering Women Through Innovation & Learning</div>
+
+    <header>
+        <nav>
+            <h1>SheShines</h1>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="profilepage.html">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Start Up Ideas</h2>
+
+        <div class="pick-box">
+            <h3>Explore Our Start Up Ideas</h3>
+            <div class="features">
+                <div class="feature">
+                    <p><a href="brand identitydesign.html">Brand Identity Design Studio</a></p>
+                </div>
+                <div class="feature">
+                    <p>Custom Web and App Development Services</p>
+                </div>
+                <div class="feature">
+                    <p>Event Hosting or Speaking Agency</p>
+                </div>
+                <div class="feature">
+                    <p>Nice Blogging Platform</p>
+                </div>
+                <div class="feature">
+                    <p><a href="organicfarming.html">Organic Farming Startup</a></p>
+                   
+                </div>
+                <div class="feature">
+                    <p><a href="sutainablefashion.html">Sustainable Fashion Brand</a></p>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+</body>
+</html>
