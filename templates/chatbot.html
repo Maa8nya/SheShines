@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SheShines - Chatbot & Categories</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgba(248, 183, 212, 0.3);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .navbar {
+            background-color: #f8b7d4;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar h1 {
+            font-size: 24px;
+            font-weight: bold;
+            color: black;
+            margin: 0;
+        }
+        .nav-links a {
+            color: black;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+        .content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 50px;
+        }
+        .chatbot-container {
+            background-color: pink;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 320px;
+            max-width: 90vw;
+            margin: 0 auto 40px auto;
+        }
+        .chatbot-container select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: #f8b7d4;
+        }
+        #chatbox {
+            margin-top: 20px;
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            display: none;
+            max-height: 250px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            text-align: left;
+            white-space: pre-line; /* to keep new lines */
+        }
+        .images-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            max-width: 900px;
+            margin: 0 auto 40px auto;
+        }
+        .images-container .category-image {
+            width: 180px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            background-color: white;
+            padding: 10px;
+        }
+        .images-container img {
+            max-width: 100%;
+            border-radius: 8px;
+            display: block;
+            margin: 0 auto;
+        }
+        .footer {
+            background-color: #f8b7d4;
+            padding: 20px;
+            text-align: center;
+            margin-top: auto;
+        }
+        .footer p {
+            font-size: 16px;
+            color: black;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h1>SheShines</h1>
+        <div class="nav-links">
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="profilepage.html">Profile</a>
+        </div>
+    </div>
+
+    <div class="chatbot-container">
+        <h2 style="color: black;">Chatbot</h2>
+        <select onchange="handleFieldChange(this.value)">
+            <option disabled selected>Select from here</option>
+            <option value="Coding">Coding</option>
+            <option value="Fashion Designing">Fashion Designing</option>
+            <option value="Organic Farming">Organic Farming</option>
+            <option value="None">None</option>
+        </select>        
+        <div id="chatbox"></div>
+    </div>
+
+    <div class="images-container">
+        <div class="category-image" title="Coding">
+            <img src="https://media.istockphoto.com/vectors/software-developer-semi-flat-color-vector-character-vector-id1342829261?k=20&m=1342829261&s=612x612&w=0&h=KQmMDQVkxfyvSR1ap8cO3r9TEMIHFR7hvmKdgSTo23g=" alt="Coding Startup Ideas" />
+        </div>
+        <div class="category-image" title="Fashion Designing">
+            <img src="https://tse2.mm.bing.net/th?id=OIP.USdjqNUmpLYZQm7rkvahiAHaJQ&pid=Api&P=0&h=180" alt="Fashion Designing Startup Ideas" />
+        </div>
+        <div class="category-image" title="Organic Farming">
+            <img src="https://freedesignfile.com/upload/2020/03/Harvest-organic-vegetables-cartoon-illustration-vector.jpg" alt="Organic Farming Startup Ideas" />
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2025 SheShines. All Rights Reserved.</p>
+    </div>
+
+<script>
+function handleFieldChange(field) {
+    if (field === "Select from here") return;
+
+    const chatbox = document.getElementById("chatbox");
+    chatbox.style.display = "block";
+    chatbox.innerHTML = `<p><strong>You:</strong> I'm interested in ${field}</p>`;
+
+    // Simulated bot responses
+    let botResponse = "";
+
+  if (field === "Coding") {
+    botResponse = "Here are some AI-curated startup ideas in the world of Coding: \n1️⃣ Launch an exclusive coding bootcamp designed for women, focusing on real-world projects and mentorship.\n2️⃣ Create a freelancing network that connects women developers with global tech gigs.\n3️⃣ Develop an AI-powered resume and portfolio builder tailored to help women shine in tech recruitment.";
+} else if (field === "Fashion Designing") {
+    botResponse = "Great choice! Here are a few fashion-forward startup ideas generated just for you: \n1️⃣ Build a sustainable fashion label that celebrates ethical materials and women artisans.\n2️⃣ Create an interactive design platform that lets users co-create outfits with AI styling tips.\n3️⃣ Launch a rental clothing service featuring stylish outfits for working professionals and entrepreneurs.";
+} else if (field === "Organic Farming") {
+    botResponse = "Here are some AI-inspired ventures in Organic Farming:\n1️⃣ Start a farm-to-table subscription box delivering fresh, organic produce grown by women farmers.\n2️⃣ Establish a digital learning platform that trains women in eco-friendly farming methods.\n3️⃣ Build an online marketplace to connect local organic growers with health-conscious consumers.";
+} else if (field === "None") {
+    botResponse = "Please select a field to get the startup ideas!";
+} else {
+    botResponse = "Hmm, I’m still learning ideas in that area. Try entering a different field or check back soon for more updates!";
+}
+
+    setTimeout(() => {
+        chatbox.innerHTML += `<p><strong>Bot:</strong> ${botResponse}</p>`;
+    }, 1500); // fake delay for better UX
+}
+</script>
+
+</body>
+</html>

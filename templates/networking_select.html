@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Select a Field - SheShines</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: rgba(248, 183, 212, 0.3);
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar {
+      background-color: #f8b7d4;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .navbar h1 {
+      margin: 0;
+      font-size: 26px;
+      color: #4a004a;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      text-align: center;
+    }
+
+    .container h2 {
+      color: #d62d7d;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: block;
+      margin: 15px auto;
+      padding: 15px 30px;
+      font-size: 18px;
+      background-color: #d62d7d;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      width: 70%;
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #aa1d64;
+    }
+
+    .footer {
+      background-color: #f8b7d4;
+      text-align: center;
+      padding: 15px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <h1>Explore Networking Prospects</h1>
+  </div>
+
+  <div class="container">
+    <h2>Select a Career Field</h2>
+
+    <!-- Fields List -->
+    <button class="btn" onclick="selectField('Coding')">Coding & Software Development</button>
+    <button class="btn" onclick="selectField('Fashion Designing')">Fashion Designing</button>
+    <button class="btn" onclick="selectField('Organic Farming')">Organic Farming</button>
+    <button class="btn" onclick="selectField('Content Writing')">Content Writing</button>
+    <button class="btn" onclick="selectField('Public Speaking')">Public Speaking</button>
+    <button class="btn" onclick="selectField('Cyber Security')">Cyber Security</button>
+  </div>
+
+  <div class="footer">
+    <p>&copy; 2025 SheShines. Empowering Women in Every Field.</p>
+  </div>
+
+  <script>
+    function selectField(field) {
+      sessionStorage.setItem('selectedField', field);
+      window.location.href = 'networking_prospects.html';
+    }
+  </script>
+
+</body>
+</html>

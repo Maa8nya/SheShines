@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SheShines - Contact Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('images/background.jpg') no-repeat center center/cover;
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .navbar {
+            background-color: #f8b7d4;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar a {
+            text-decoration: none;
+            color: black;
+            margin: 0 15px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .navbar a:hover {
+            color: #b03962;
+        }
+        .container {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            margin-top: 50px; /* Moves content down */
+        }
+        .left-section {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .contact-form {
+            background: #f8b7d4;
+            padding: 30px;
+            border-radius: 15px;
+            width: 400px;
+            text-align: left;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-top: 50px; /* Moves form down */
+        }
+        .contact-form h2 {
+            text-align: center;
+            color: #b03962;
+            font-size: 28px;
+        }
+        .contact-form label {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .contact-form button {
+            background: #8c004b;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 15px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .contact-form button:hover {
+            background: #600033;
+        }
+        .right-section {
+            width: 40%;
+            background: url('images/img8.1.g.hack.png') no-repeat center center/cover;
+            margin-top: 50px; /* Moves image down */
+        }
+        .info {
+            font-size: 16px;
+            margin-top: 20px;
+            color: #600033;
+            font-weight: bold;
+        }
+    </style>
+     <script>
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'hi,kn,ta,te',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</head>
+<body>
+    <div class="navbar">
+        <div><b>SheShines</b></div>
+        <div>
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html" style="color: #b03962;">Contact Us</a>
+            <a href="profilepage.html">Profile</a>
+        </div>
+    </div>
+    <!-- Language Selector -->
+    <div class="translate-container">
+        <label for="language">Translate: </label>
+        <div id="google_translate_element"></div>
+    </div>
+    
+    <div class="container">
+        <div class="left-section">
+            <div class="contact-form">
+                <h2>Contact Us</h2>
+                <label>Name</label>
+                <input type="text" placeholder="Enter your Name....">
+                <label>Email</label>
+                <input type="email" placeholder="Enter your email....">
+                <label>Message</label>
+                <textarea rows="4" placeholder="Drop your msg here...."></textarea>
+                <button>Submit</button>
+            </div>
+        </div>
+        <div class="right-section"></div>
+    </div>
+    
+    <div class="info">
+        <p><b>Our Location:</b><br>Suite 456, Innovation Tower,<br>Inspire City, CA 98765, Delhi.</p>
+        <p><b>Customer Support</b><br>Phone: 1234567890<br>Email: info@empowerwomen.com</p>
+    </div>
+</body>
+</html>

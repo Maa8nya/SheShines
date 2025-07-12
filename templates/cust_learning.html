@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Customized Learning | SheShines</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #ffe6f0, #ffe0ec);
+      color: #333;
+    }
+
+    header {
+      background-color: #f8c5d5;
+      padding: 15px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 30px;
+    }
+
+    nav h1 {
+      margin: 0;
+      color: black;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      font-weight: bold;
+      color: black;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ff66a6;
+    }
+
+    .translate-container {
+      margin-top: 5px;
+      text-align: center;
+    }
+
+    main {
+      margin-top: 100px;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+      color: #5a0035;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      transition: 0.5s ease;
+    }
+
+    .card h3 {
+      color: #5a0035;
+      margin: 15px 0 10px;
+    }
+
+    .card p {
+      padding: 0 20px 10px;
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .card a {
+      display: inline-block;
+      margin: 10px 0 20px;
+      padding: 8px 16px;
+      background-color: #f76ca5;
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .card a:hover {
+      background-color: #d94e8e;
+    }
+
+    footer {
+      background-color: #f8c5d5;
+      padding: 15px;
+      margin-top: 40px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+  <script>
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'hi,kn,ta,te',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+  </script>
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>SheShines</h1>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="profilepage.html">Profile</a></li>
+      </ul>
+    </nav>
+    <div class="translate-container">
+      <label for="language">Translate: </label>
+      <div id="google_translate_element"></div>
+    </div>
+  </header>
+
+  <main>
+    <h2>Customized Learning Paths</h2>
+    <div class="grid-container">
+      <div class="card">
+        <img src="images/coding.g.hack.png" alt="Coding">
+        <h3>Coding</h3>
+        <p>Learn web development, Python, and more from beginner-friendly tutorials.</p>
+        <ul>
+            <li><a href="https://www.w3schools.com" target="_blank">W3Schools - Learn HTML, CSS, JS</a></li>
+            <li><a href="https://www.codecademy.com/learn" target="_blank">Codecademy Interactive Lessons</a></li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <img src="images/contentwritting.hack.png" alt="Content Writing">
+        <h3>Content Writing</h3>
+        <p>Master storytelling, SEO, blogs, and freelancing in content writing.</p>
+        <ul>
+            <li><a href="https://www.grammarly.com/blog/" target="_blank">Grammarly Blog for Writing Tips</a></li>
+            <li><a href="https://www.youtube.com/results?search_query=learn+content+writing+for+beginners" target="_blank">Content Writing Tutorials</a></li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <img src="images/farming.g.hack.png" alt="Farming">
+        <h3>Farming</h3>
+        <p>Explore modern techniques, organic farming, and agricultural tools.</p>
+        <ul>
+            <li><a href="https://www.youtube.com/results?search_query=learn+farming+for+beginners" target="_blank">YouTube - Farming Basics</a></li>
+            <li><a href="https://agricoop.nic.in/en/Agriculture" target="_blank">Indian Agriculture Portal</a></li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <img src="images/fashiondesigning.g.hack.png" alt="Fashion Design">
+        <h3>Fashion Design</h3>
+        <p>Design garments, sketch ideas, and learn fashion business basics.</p>
+        <ul>
+            <li><a href="https://www.youtube.com/results?search_query=learn+fashion+design+for+beginners" target="_blank">Fashion Design Basics</a></li>
+            <li><a href="https://www.skillshare.com/en/browse/fashion-design" target="_blank">Skillshare Fashion Design Courses</a></li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <img src="images/i25.hack.png" alt="Cyber Security">
+        <h3>Cyber Security</h3>
+        <p>Understand online safety, ethical hacking, and digital defense tools.</p>
+        <ul>
+            <li><a href="https://cybersecurityguide.org/students/" target="_blank">Cybersecurity Guide for Beginners</a></li>
+            <li><a href="https://www.youtube.com/results?search_query=learn+cybersecurity+for+beginners" target="_blank">Cybersecurity Playlists</a></li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <img src="images/publicspeaking.g.hack.png" alt="Public Speaking">
+        <h3>Public Speaking</h3>
+        <p>Boost your confidence and speak fluently with impact and clarity.</p>
+        <ul>
+            <li><a href="https://www.toastmasters.org/resources/public-speaking-tips" target="_blank">Toastmasters Public Speaking Tips</a></li>
+            <li><a href="https://www.youtube.com/results?search_query=learn+public+speaking+for+beginners" target="_blank">YouTube - Public Speaking Videos</a></li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2024 SheShines. All rights reserved.
+  </footer>
+</body>
+</html>

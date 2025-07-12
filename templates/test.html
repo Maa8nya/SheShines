@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Skill Test</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff5f8;
+      padding: 30px;
+      color: #333;
+    }
+
+    h2 {
+      color: #6d1453;
+      text-align: center;
+      animation: fadeInDown 1s ease-out;
+    }
+
+    .question {
+      margin-bottom: 20px;
+      padding: 20px;
+      background: #ffe2eb;
+      border-radius: 15px;
+      animation: slideIn 0.5s ease forwards;
+      opacity: 0;
+    }
+
+    .submit-btn,
+    .back-btn  {
+      margin: 30px auto;
+      background: #ff85a2;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 30px;
+      font-size: 18px;
+      cursor: pointer;
+      display: block;
+      transition: background 0.3s;
+    }
+
+    .submit-btn:hover,
+    .back-btn:hover  {
+      background: #e76b8c;
+    }
+
+    #result {
+      margin-top: 40px;
+      font-weight: bold;
+      font-size: 22px;
+      color: #6d1453;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+
+    #chart-container {
+      max-width: 400px;
+      margin: 30px auto;
+      display: none;
+    }
+
+    canvas {
+      background: white;
+      padding: 15px;
+      border-radius: 20px;
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from {
+        transform: translateY(-20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateX(-20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h2 id="test-title">Loading Test...</h2>
+  <form id="test-form"></form>
+  <button class="submit-btn" onclick="submitTest()">Submit</button>
+  <button class="back-btn" onclick="window.history.back()">Back</button>
+  <div id="result"></div>
+  <div id="chart-container">
+    <canvas id="scoreChart" width="300" height="300"></canvas>
+  </div>
+
+  <script>
+    const questionsData = {
+      "coding": [
+        {
+          question: "What does HTML stand for?",
+          options: ["Hyper Trainer Marking Language", "Hyper Text Markup Language", "Hyper Text Markdown Language", "None"],
+          answer: "Hyper Text Markup Language"
+        },
+        {
+          question: "What symbol is used for comments in JavaScript?",
+          options: ["//", "/* */", "<!-- -->", "#"],
+          answer: "//"
+        }
+      ],
+      "content-writing": [
+        {
+          question: "What is the purpose of SEO in content writing?",
+          options: ["To make content longer", "To improve readability", "To increase visibility in search engines", "None of the above"],
+          answer: "To increase visibility in search engines"
+        },
+        {
+          question: "Which is NOT a writing tone?",
+          options: ["Formal", "Informal", "Aggressive", "Technical"],
+          answer: "Aggressive"
+        }
+      ],
+      "farming": [
+        {
+          question: "Which crop is a Rabi crop?",
+          options: ["Rice", "Wheat", "Maize", "Cotton"],
+          answer: "Wheat"
+        },
+        {
+          question: "Drip irrigation is most useful for?",
+          options: ["Flood-prone crops", "Arid regions", "Large-scale farming", "None"],
+          answer: "Arid regions"
+        }
+      ],
+      "fashion-design": [
+    {
+        question: "Which fabric is commonly used for summer wear?",
+        options: ["Wool", "Silk", "Cotton", "Velvet"],
+        answer: "Cotton"
+    },
+    {
+        question: "What does the term 'haute couture' refer to?",
+        options: ["Casual wear", "Ready-to-wear fashion", "Custom-fitted high-end fashion", "Street fashion"],
+        answer: "Custom-fitted high-end fashion"
+    }
+    ],
+        "cyber-security": [
+    {
+        question: "What is the primary purpose of a firewall?",
+        options: ["To cool the server", "To prevent data loss", "To block unauthorized access", "To backup data"],
+        answer: "To block unauthorized access"
+    },
+    {
+        question: "Phishing attacks are mainly aimed at:",
+        options: ["Stealing physical devices", "Tricking users into giving personal info", "Hacking Wi-Fi routers", "Cracking software"],
+        answer: "Tricking users into giving personal info"
+    }
+    ],
+        "public-speaking": [
+    {
+        question: "What is the best way to handle nervousness before a speech?",
+        options: ["Avoid preparation", "Ignore the audience", "Practice and deep breathing", "Speak very fast"],
+        answer: "Practice and deep breathing"
+    },
+    {
+        question: "What is a common method to engage the audience?",
+        options: ["Use technical jargon", "Speak in monotone", "Ask questions or use humor", "Read slides verbatim"],
+        answer: "Ask questions or use humor"
+    }
+    ]
+    };
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const skill = urlParams.get("skill");
+    const testTitle = document.getElementById("test-title");
+    const form = document.getElementById("test-form");
+
+    if (!questionsData[skill]) {
+      testTitle.innerText = "Invalid Skill Selected!";
+    } else {
+      testTitle.innerText = `Skill Test: ${skill.replace("-", " ").toUpperCase()}`;
+      const questions = questionsData[skill];
+      questions.forEach((q, index) => {
+        const div = document.createElement("div");
+        div.classList.add("question");
+        div.style.animationDelay = `${index * 0.2}s`;
+        div.innerHTML = `<p>${index + 1}. ${q.question}</p>` + q.options.map(option =>
+          `<label><input type="radio" name="q${index}" value="${option}" required /> ${option}</label><br>`
+        ).join("");
+        form.appendChild(div);
+      });
+    }
+
+    function submitTest() {
+      const questions = questionsData[skill];
+      let score = 0;
+      questions.forEach((q, i) => {
+        const answer = document.querySelector(`input[name="q${i}"]:checked`);
+        if (answer && answer.value === q.answer) score++;
+      });
+
+      const resultDiv = document.getElementById("result");
+      resultDiv.innerText = `You scored ${score} out of ${questions.length}`;
+      resultDiv.style.opacity = 1;
+
+      // Show chart
+      document.getElementById("chart-container").style.display = 'block';
+      renderChart(score, questions.length - score);
+    }
+
+    function renderChart(correct, incorrect) {
+      const ctx = document.getElementById("scoreChart").getContext("2d");
+      new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          labels: ['Correct', 'Incorrect'],
+          datasets: [{
+            data: [correct, incorrect],
+            backgroundColor: ['#6d1453', '#ffe2eb'],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              position: 'bottom'
+            },
+            tooltip: {
+              callbacks: {
+                label: function (context) {
+                  return `${context.label}: ${context.raw}`;
+                }
+              }
+            }
+          }
+        }
+      });
+    }
+  </script>
+</body>
+</html>

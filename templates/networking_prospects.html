@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Networking Prospects - SheShines</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: rgba(248, 183, 212, 0.3);
+      margin: 0;
+      padding: 0;
+    }
+    .navbar {
+      background-color: #f8b7d4;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .navbar h1 {
+      font-size: 24px;
+      font-weight: bold;
+      margin: 0;
+      color: black;
+    }
+    .nav-links a {
+      margin-left: 15px;
+      text-decoration: none;
+      color: #4a004a;
+      font-weight: bold;
+    }
+    .content {
+      padding: 40px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .card {
+      background-color: white;
+      border-radius: 12px;
+      padding: 25px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .card h2 {
+      color: #d62d7d;
+    }
+    .footer {
+      background-color: #f8b7d4;
+      text-align: center;
+      padding: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <h1>SheShines</h1>
+    <div class="nav-links">
+      <a href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+
+  <div class="content" id="fieldContent">
+    <!-- Dynamic content inserted by JS -->
+  </div>
+
+  <div class="footer">
+    <p>&copy; 2025 SheShines. All rights reserved.</p>
+  </div>
+
+  <script>
+    const selectedField = sessionStorage.getItem("selectedField") || "Coding";
+
+    const fieldData = {
+      "Coding": {
+        title: "Networking Prospects in Coding",
+        content: `
+          👩‍💻 <strong>Recommended Courses:</strong> Full Stack Web Development, CS50x, DSA in Python.<br><br>
+          💸 <strong>Average Salary (India):</strong> ₹5–12 LPA.<br><br>
+          🌍 <strong>Top Places:</strong> Google, Infosys, TCS, Accenture, Startups.<br><br>
+          🛡️ <strong>Safety & Work Culture:</strong> Hybrid-friendly, inclusive teams, improving diversity.<br><br>
+          👩‍🔬 <strong>Voices from Women:</strong><br>
+          "Coding helps me solve real problems. I love mentoring junior girls." — Aishwarya, Zoho<br><br>
+          "Tech was male-dominated, but change is happening!" — Tanvi, Fintech Dev
+        `
+      },
+      "Fashion Designing": {
+        title: "Networking Prospects in Fashion Designing",
+        content: `
+          👗 <strong>Recommended Courses:</strong> NIFT, Pattern Making, Fashion Illustration.<br><br>
+          💸 <strong>Average Salary:</strong> ₹3–6 LPA; freelancing varies widely.<br><br>
+          🌟 <strong>Best Places:</strong> FabIndia, Film Industry, Online Stores.<br><br>
+          🛡️ <strong>Safety & Work Culture:</strong> Freelancing is flexible but competitive.<br><br>
+          👩‍🎨 <strong>Voices from Women:</strong><br>
+          "I started my boutique from home." — Riya<br><br>
+          "Internships helped me more than theory!" — Harsha
+        `
+      },
+      "Organic Farming": {
+        title: "Networking Prospects in Organic Farming",
+        content: `
+          🌱 <strong>Recommended Courses:</strong> NCOF Training, KVK Programs, Online Videos.<br><br>
+          💸 <strong>Average Income:</strong> ₹2–10+ LPA based on scale.<br><br>
+          🏡 <strong>Best Places:</strong> Maharashtra, Karnataka, Tamil Nadu.<br><br>
+          🛡️ <strong>Safety & Culture:</strong> Physically demanding but community support is strong.<br><br>
+          👩‍🌾 <strong>Voices from Women:</strong><br>
+          "I sell directly to urban customers now!" — Suman<br><br>
+          "From desk job to turmeric queen!" — Meena
+        `
+      },
+      "Content Writing": {
+        title: "Networking Prospects in Content Writing",
+        content: `
+          ✍️ <strong>Recommended Courses:</strong> Creative Writing (Coursera), SEO Writing (Udemy), HubSpot Academy.<br><br>
+          💸 <strong>Average Salary:</strong> ₹3–7 LPA; freelancers can charge ₹0.5–₹5/word.<br><br>
+          🌐 <strong>Best Platforms:</strong> Medium, LinkedIn, Upwork, Agencies.<br><br>
+          🛡️ <strong>Safety & Flexibility:</strong> Fully remote jobs, safe and women-friendly.<br><br>
+          👩‍💼 <strong>Voices from Women:</strong><br>
+          "I write from home while raising a toddler." — Neha, Freelance Writer<br><br>
+          "Tech writing gave me stability after college." — Shweta, Content Specialist at SaaS firm
+        `
+      },
+      "Public Speaking": {
+        title: "Networking Prospects in Public Speaking",
+        content: `
+          🎤 <strong>Recommended Courses:</strong> TEDx Speaker Training, Toastmasters, Udemy on Confidence Building.<br><br>
+          💸 <strong>Average Income:</strong> ₹4–10 LPA or ₹10k–₹1L per event.<br><br>
+          🏢 <strong>Best Venues:</strong> Colleges, Corporate Seminars, YouTube, Instagram Lives.<br><br>
+          🛡️ <strong>Safety & Environment:</strong> Offline events need travel safety; virtual is safer.<br><br>
+          👩‍🏫 <strong>Voices from Women:</strong><br>
+          "I started with school events and now host webinars." — Divya<br><br>
+          "Speaking helped me find my confidence again!" — Arpita
+        `
+      },
+      "Cyber Security": {
+        title: "Networking Prospects in Cyber Security",
+        content: `
+          🛡️ <strong>Recommended Courses:</strong> CEH, CompTIA Security+, Google Cybersecurity Cert.<br><br>
+          💸 <strong>Average Salary:</strong> ₹6–15 LPA.<br><br>
+          🧠 <strong>Top Employers:</strong> Deloitte, EY, IBM, Government PSUs.<br><br>
+          🔐 <strong>Safety & Inclusion:</strong> Secure, female communities like WiCyS and InfoSecGirls exist.<br><br>
+          👩‍💻 <strong>Voices from Women:</strong><br>
+          "I'm the only woman in my cybersec team—and I'm loving it!" — Priya, Analyst<br><br>
+          "The field needs more women. It's high-paying and meaningful." — Kavita, Pen Tester
+        `
+      }
+    };
+
+    const container = document.getElementById("fieldContent");
+
+    if (fieldData[selectedField]) {
+      container.innerHTML = `
+        <div class="card">
+          <h2>${fieldData[selectedField].title}</h2>
+          <p>${fieldData[selectedField].content}</p>
+        </div>
+      `;
+    } else {
+      container.innerHTML = `<div class="card"><p>Field not found. Please go back and select a valid field.</p></div>`;
+    }
+  </script>
+
+</body>
+</html>

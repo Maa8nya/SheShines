@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - SheShines</title>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f8bbd0;
+            padding: 10px 20px;
+        }
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .navbar .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        .navbar .nav-links li {
+            display: inline;
+        }
+        .navbar .nav-links a {
+            text-decoration: none;
+            font-size: 18px;
+            color: black;
+            font-weight: bold;
+        }
+        .about-container {
+            max-width: 900px;
+            margin: 40px auto;
+            text-align: left;
+        }
+        .about-container h1 {
+            text-align: center;
+            font-size: 32px;
+            color: #000;
+        }
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .about-text {
+            flex: 1;
+            font-size: 18px;
+            color: #333;
+            line-height: 1.6;
+        }
+        .about-images {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .about-images img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .footer {
+            background-color: #f8bbd0;
+            padding: 15px;
+            margin-top: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+        /* Language Dropdown Styling */
+        .language-selector {
+            margin-left: 20px;
+        }
+    </style>
+     <script>
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'hi,kn,ta,te',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</head>
+<body>
+
+    <!-- Navbar with Language Selector -->
+    <nav class="navbar">
+        <div class="logo">SheShines</div>
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="profilepage.html">Profile</a></li>
+        </ul>
+
+        <!-- Language Selector -->
+        <div class="translate-container">
+            <label for="language">Translate: </label>
+            <div id="google_translate_element"></div>
+        </div>
+    </div>
+    </nav>
+
+    <!-- About Us Section -->
+    <div class="about-container">
+        <h1>About Us</h1>
+        <div class="about-content">
+            <div class="about-text" id="about-text">
+                <p>At SheShines, we believe in the limitless potential of women to drive change, innovation, and progress. However, we recognize that many women face significant barriers when it comes to accessing affordable mentorship, startup guidance, and effective networking opportunities.</p>
+                <p>These challenges often restrict their professional growth, limit their innovation potential, and hinder entrepreneurial success. Our platform was born from a vision to break down these barriers, offering a supportive, collaborative space for women to realize their ambitions.</p>
+                <p>We understand that empowerment is not just about access—it’s about tailored support that aligns with each woman’s unique journey. Join us in shaping a world where every woman has the resources, support, and community she needs to thrive.</p>
+            </div>
+            <div class="about-images">
+                <img src="images/i18.hack.png" alt="Women Empowerment">
+                <img src="images/i19.hack.png" alt="Community of Women">
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        &copy; 2024 SheShines. All rights reserved.
+    </div>
+
+
+</body>
+</html>

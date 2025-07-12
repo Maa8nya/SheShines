@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SheShines - Home</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            text-align: center;
+            overflow-x: hidden;
+        }
+        .header {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 40px 20px;
+            border-radius: 0 0 30px 30px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        .header h1 {
+            font-size: 40px;
+            color: black;
+            margin: 0;
+            font-weight: bold;
+        }
+        .sub-text {
+            font-size: 22px;
+            color: black;
+            margin-top: 10px;
+            opacity: 0;
+            animation: fadeInUp 1.5s ease-in-out 0.5s forwards;
+        }
+        .translate-container {
+            margin-top: 10px;
+        }
+        .translate-container select {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #b03962;
+            cursor: pointer;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 50px;
+            flex-wrap: wrap;
+            position: relative;
+        }
+        .section {
+            flex: 1;
+            text-align: center;
+            padding: 20px;
+        }
+        .section img {
+            width: 80%;
+            max-width: 400px;
+            border-radius: 20px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+        .section img:hover {
+            transform: scale(1.05);
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        .buttons button {
+            background: linear-gradient(135deg, #b03962, #ff758c);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 30px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .buttons button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0px 5px 15px rgba(176, 57, 98, 0.4);
+        }
+        .footer {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            margin-top: 50px;
+            border-radius: 30px 30px 0 0;
+            animation: fadeIn 1.5s ease-in-out 1s;
+        }
+        .footer p {
+            font-size: 16px;
+            color: black;
+            margin: 5px 0;
+        }
+        .footer-links {
+            margin: 10px 0;
+        }
+        .footer-links a {
+            color: #b03962;
+            margin: 0 10px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+        }
+        .footer-links a:hover {
+            color: #8c004b;
+        }
+    </style>
+    <script>
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'hi,kn,ta,te',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</head>
+<body>
+    <div class="header">
+        <h1>SheShines: A Women’s Journey Towards Success</h1>
+        <p class="sub-text">Empower, Elevate, Excel<br>Smarter Business, Stronger Women</p>
+        
+        <!-- Language Selector -->
+        <div class="translate-container">
+            <label for="language">Translate: </label>
+            <div id="google_translate_element"></div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="section">
+            <img src="images/i10.g.hack.png" alt="Women Empowerment">
+        </div>
+        <div class="section">
+            <div class="buttons">
+                <button><a href="registration.html">Register</a></button>
+                <p><strong>Already have an account?</strong></p>
+                <button><a href="login.html">Login</a></button>
+            </div>
+        </div>
+        <div class="section">
+            <img src="images/i9.g.hack.png" alt="Women Networking">
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2025 SheShines. All Rights Reserved.</p>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a> | 
+            <a href="#">Terms of Service</a> | 
+            <a href="#">Contact Us</a>
+        </div>
+    </div>
+</body>
+</html>

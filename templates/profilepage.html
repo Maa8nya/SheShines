@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Profile</title>
+  <style>
+    body {
+      font-family: Arial;
+      background-color: #f8f8ff;
+      text-align: center;
+      padding: 40px;
+    }
+    .profile-box {
+      background-color: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      display: inline-block;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h2>User Profile</h2>
+  <div class="profile-box">
+    <p><strong>Name:</strong> <span id="name"></span></p>
+    <p><strong>Email:</strong> <span id="email"></span></p>
+    <p><strong>User ID:</strong> <span id="id"></span></p>
+  </div>
+
+  <script>
+    // Assume user email is stored in localStorage after login
+    const userEmail = localStorage.getItem("userEmail");
+
+    if (!userEmail) {
+      alert("No user email found. Please login again.");
+    } else {
+      fetch("http://127.0.0.1:5000/profile", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ email: userEmail })
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data.error || data.message) {
+          alert(data.error || data.message);
+        } else {
+          document.getElementById("name").innerText = data.name;
+          document.getElementById("email").innerText = data.email;
+          document.getElementById("id").innerText = data.id;
+        }
+      })
+      .catch(err => {
+        console.error("Error fetching profile:", err);
+        alert("Failed to load profile.");
+      });
+    }
+  </script>
+</body>
+</html>

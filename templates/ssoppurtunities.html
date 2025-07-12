@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SheShines - Skill Swap</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #fff;
+        }
+
+        header {
+            background-color: #f8c5d5;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        nav h1 {
+            color: black;
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav ul li a:hover {
+            color: pink;
+        }
+
+        main {
+            margin-top: 80px;
+            padding: 20px;
+        }
+
+        h2 {
+            color: black;
+            margin-bottom: 20px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .skill-box {
+            width: 250px;
+            background-color: #f8c5d5;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .skill-box:hover {
+            transform: scale(1.05);
+        }
+
+        .skill-box img {
+            width: 100%;
+            height: 200px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .skill-box p {
+            font-weight: bold;
+            color: black;
+            margin-top: 10px;
+        }
+
+        footer {
+            background-color: #f8c5d5;
+            padding: 10px;
+            margin-top: 40px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+    <script>
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'hi,kn,ta,te',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>SheShines</h1>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="profilepage.html">Profile</a></li>
+            </ul>
+        </nav>
+         <!-- Language Selector -->
+    <div class="translate-container">
+        <label for="language">Translate: </label>
+        <div id="google_translate_element"></div>
+    </div>
+    </header>
+    
+    <main>
+        <h2>Discover Skill Swap Opportunities</h2>
+        <div class="skills-container">
+            <div class="skill-box">
+                <img src="images/coding.g.hack.png" alt="Coding">
+                <h2>Coding</h2>
+                <a href="https://www.youtube.com/results?search_query=learn+coding+for+beginners" target="_blank">Coding Tutorials</a>
+               
+            </div>
+            <div class="skill-box">
+                <img src="images/contentwritting.hack.png" alt="Content Writing">
+                <h2>Content Writing</h2>
+                <a href="https://www.youtube.com/results?search_query=learn+contentwiting+for+beginners" target="_blank">Content writing Tutorials</a>
+            </div>
+
+            <div class="skill-box">
+                <img src="images/farming.g.hack.png" alt="Farming">
+                <h2>Farming</h2>
+                <a href="https://www.youtube.com/results?search_query=learn+farming+for+beginners" target="_blank">Farming Tutorials</a>
+            </div>
+
+            <div class="skill-box">
+                <img src="images/fashiondesigning.g.hack.png" alt="Fashion Design">
+                <h2>Fashion Design</h2>
+                <a href="https://www.youtube.com/results?search_query=learn+fashiondesigning+for+beginners" target="_blank">Fashion Designing Tutorials</a>
+            </div>
+
+            <div class="skill-box">
+                <img src="images/i25.hack.png" alt="Cyber Security">
+                <h2>Cyber Security</h2>
+                <a href="https://www.youtube.com/results?search_query=learn+cybersecurity+for+beginners" target="_blank">Cyber Security Tutorials</a>
+            </div>
+
+            <div class="skill-box">
+                <img src="images/publicspeaking.g.hack.png" alt="Public Speaking">
+                <h2>Public Speaking</h2>
+                <a href="https://www.youtube.com/results?search_query=learn+publicspeaking+for+beginners" target="_blank">Public Speaking Tutorials</a>
+                
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        &copy; 2024 SheShines. All rights reserved.
+    </footer>
+</body>
+</html>
