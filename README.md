@@ -43,7 +43,7 @@ A comprehensive web platform designed to empower women entrepreneurs through sta
 ### Installation
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/SheShines.git
+git clone https://github.com/Maa8nya/SheShines.git
 cd SheShines
 
 # Setup virtual environment
